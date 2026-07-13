@@ -1,194 +1,340 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Destello & Estilo | Luxury Salon</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-</head>
-<body>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
-    <!-- Header Navigation -->
-    <header>
-        <!-- Brand Name Translates Based on Selected Language -->
-        <div class="logo lang-en" style="display:none;">GLOW & STYLE</div>
-        <div class="logo lang-es">DESTELLO & ESTILO</div>
-        
-        <nav>
-            <a href="#services" class="lang-en" style="display:none;">Services</a>
-            <a href="#services" class="lang-es">Servicios</a>
-            
-            <a href="#book" class="btn-nav lang-en" style="display:none;">Book Session</a>
-            <a href="#book" class="btn-nav lang-es">Reservar Cita</a>
-            
-            <!-- Styled Minimalist Dropdown Container -->
-            <div class="lang-dropdown">
-                <select onchange="switchLanguage(this.value)">
-                    <option value="es" selected>ES</option>
-                    <option value="en">EN</option>
-                </select>
-            </div>
-        </nav>
-    </header>
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #FDFBF7; 
+    color: #2A2421; 
+    overflow-x: hidden;
+}
 
-    <!-- Modern Asymmetrical Hero Section -->
-    <section class="hero">
-        <div class="hero-container">
-            <div class="hero-text-side">
-                <span class="hero-tag lang-en" style="display:none;">HAIR // NAILS // AESTHETICS</span>
-                <span class="hero-tag lang-es">CABELLO // UÑAS // ESTÉTICA</span>
-                
-                <h1 class="lang-en" style="display:none;">Redefining<br>beauty & style.</h1>
-                <h1 class="lang-es">Redefiniendo la<br>belleza y el estilo.</h1>
-                
-                <p class="lang-en" style="display:none;">A premium editorial experience crafted for those who value master-level artistry and modern organic care.</p>
-                <p class="lang-es">Una experiencia premium de nivel editorial, diseñada para quienes valoran el arte maestro y el cuidado moderno.</p>
-                
-                <a href="#book" class="btn-primary lang-en" style="display:none;">Book via WhatsApp</a>
-                <a href="#book" class="btn-primary lang-es">Reservar por WhatsApp</a>
-            </div>
-            
-            <div class="hero-image-side">
-                <div class="hero-image-wrapper">
-                    <!-- Premium Mixed Beauty & Styling Curation Image -->
-                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1200&q=80" alt="Destello & Estilo Curation">
-                </div>
-            </div>
-        </div>
-    </section>
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 5%;
+    background-color: rgba(253, 251, 247, 0.95);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(42, 36, 33, 0.05);
+}
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="section-header">
-            <h2 class="lang-en" style="display:none;">Our Pillars</h2>
-            <h2 class="lang-es">Nuestros Pilares</h2>
-        </div>
-        
-        <div class="service-grid">
-            <div class="service-card">
-                <span class="card-num">01</span>
-                <h3 class="lang-en" style="display:none;">Hair Artistry</h3>
-                <h3 class="lang-es">Arte Capilar</h3>
-                <p class="lang-en" style="display:none;">Cuts, custom balayage, and restorative high-gloss treatments tailored to your structure.</p>
-                <p class="lang-es">Cortes, balayage personalizado y tratamientos restauradores de alto brillo adaptados a ti.</p>
-                <span class="price">€45+</span>
-            </div>
-            
-            <div class="service-card">
-                <span class="card-num">02</span>
-                <h3 class="lang-en" style="display:none;">Nail Architecture</h3>
-                <h3 class="lang-es">Arquitectura de Uñas</h3>
-                <p class="lang-en" style="display:none;">Pristine structural gel extensions and avant-garde minimalist nail editorial styles.</p>
-                <p class="lang-es">Extensiones de gel estructurales impecables y estilos de uñas minimalistas de vanguardia.</p>
-                <span class="price">€35+</span>
-            </div>
-            
-            <div class="service-card">
-                <span class="card-num">03</span>
-                <h3 class="lang-en" style="display:none;">Advanced Curation</h3>
-                <h3 class="lang-es">Curación Avanzada</h3>
-                <p class="lang-en" style="display:none;">Lash structural lifting, precise brow laminations, and red-carpet dermal glow formulas.</p>
-                <p class="lang-es">Lifting estructural de pestañas, laminación precisa de cejas y fórmulas de brillo dérmico.</p>
-                <span class="price">€50+</span>
-            </div>
-        </div>
-    </section>
+.logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #2A2421;
+}
 
-    <!-- Booking Section -->
-    <section id="book" class="booking-section">
-        <div class="booking-box">
-            <h2 class="lang-en" style="display:none;">Request an Appointment</h2>
-            <h2 class="lang-es">Solicitar Cita</h2>
-            <p class="booking-subtitle lang-en" style="display:none;">Fill your details below, and it will generate an instant pre-filled text straight to our official WhatsApp.</p>
-            <p class="booking-subtitle lang-es">Complete sus datos a continuación y se generará un texto instantáneo directo a nuestro WhatsApp oficial.</p>
-            
-            <form onsubmit="sendToWhatsApp(event)" class="salon-form">
-                <div class="form-group">
-                    <label class="lang-en" style="display:none;">Full Name</label><label class="lang-es">Nombre Completo</label>
-                    <input type="text" id="clientName" required placeholder="e.g. Vanessa Laurent">
-                </div>
-                
-                <div class="form-group">
-                    <label class="lang-en" style="display:none;">Service Selection</label><label class="lang-es">Selección de Servicio</label>
-                    <select id="clientService" required>
-                        <option value="Hair Artistry">Hair Artistry / Arte Capilar (€45+)</option>
-                        <option value="Nail Architecture">Nail Architecture / Arquitectura de Uñas (€35+)</option>
-                        <option value="Advanced Curation">Advanced Curation / Curación Avanzada (€50+)</option>
-                    </select>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label class="lang-en" style="display:none;">Preferred Date</label><label class="lang-es">Fecha Preferida</label>
-                        <input type="date" id="clientDate" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="lang-en" style="display:none;">Preferred Time</label><label class="lang-es">Hora Preferida</label>
-                        <input type="time" id="clientTime" required>
-                    </div>
-                </div>
-                
-                <button type="submit" class="btn-primary lang-en" style="display:none; width:100%; border:none; text-align:center; margin-top:10px;">Send via WhatsApp</button>
-                <button type="submit" class="btn-primary lang-es" style="width:100%; border:none; text-align:center; margin-top:10px;">Enviar por WhatsApp</button>
-            </form>
-        </div>
-    </section>
+nav {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Destello & Estilo. Timeless Elegance. All rights reserved.</p>
-    </footer>
+nav a {
+    text-decoration: none;
+    color: rgba(42, 36, 33, 0.7);
+    font-weight: 500;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
 
-    <!-- Scripting for Language Toggle & WhatsApp Transmission -->
-    <script>
-        let currentLang = 'es';
+nav a:hover {
+    color: #A98467; 
+}
 
-        function switchLanguage(lang) {
-            currentLang = lang;
-            const enElements = document.querySelectorAll('.lang-en');
-            const esElements = document.querySelectorAll('.lang-es');
-            
-            if (lang === 'es') {
-                enElements.forEach(el => el.style.display = 'none');
-                esElements.forEach(el => el.style.display = 'inline-block');
-            } else {
-                esElements.forEach(el => el.style.display = 'none');
-                enElements.forEach(el => el.style.display = 'inline-block');
-            }
-        }
+.btn-nav {
+    background-color: #2A2421;
+    color: #FDFBF7 !important;
+    padding: 10px 22px;
+    border-radius: 4px;
+    font-size: 0.8rem !important;
+    letter-spacing: 1.5px;
+    transition: background-color 0.3s ease;
+}
 
-        function sendToWhatsApp(event) {
-            event.preventDefault();
-            
-            // LINE 120: REPLACE THE NUMBERS BELOW WITH YOUR WHATSAPP PHONE NUMBER (Country code first, no spaces, no + sign)
-            const salonPhoneNumber = "34123456789"; 
+.btn-nav:hover {
+    background-color: #A98467;
+}
 
-            const name = document.getElementById('clientName').value;
-            const service = document.getElementById('clientService').value;
-            const date = document.getElementById('clientDate').value;
-            const time = document.getElementById('clientTime').value;
+.lang-dropdown {
+    position: relative;
+    display: inline-block;
+}
 
-            let message = "";
-            if (currentLang === 'es') {
-                message = `¡Hola Destello & Estilo! Deseo agendar una cita:%0A%0A` +
-                          `• *Cliente:* ${name}%0A` +
-                          `• *Servicio:* ${service}%0A` +
-                          `• *Fecha:* ${date}%0A` +
-                          `• *Hora:* ${time}`;
-            } else {
-                message = `Hello Glow & Style! I'd like to request an appointment:%0A%0A` +
-                          `• *Client:* ${name}%0A` +
-                          `• *Service:* ${service}%0A` +
-                          `• *Date:* ${date}%0A` +
-                          `• *Time:* ${time}`;
-            }
+.lang-dropdown select {
+    background: transparent;
+    color: #2A2421;
+    border: 1px solid rgba(42, 36, 33, 0.2);
+    padding: 6px 28px 6px 12px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232A2421' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 10px;
+}
 
-            window.open(`https://wa.me/${salonPhoneNumber}?text=${message}`, '_blank');
-        }
-    </script>
+.lang-dropdown select:hover {
+    border-color: #A98467;
+}
 
-</body>
-</html>
+.hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    padding: 40px 5%;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+    width: 100%;
+}
+
+.hero-text-side {
+    max-width: 580px;
+}
+
+.hero-tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #A98467;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.hero-text-side h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 400;
+    line-height: 1.15;
+    color: #2A2421;
+    margin-bottom: 25px;
+}
+
+.hero-text-side p {
+    font-size: 1.05rem;
+    color: rgba(42, 36, 33, 0.7);
+    line-height: 1.7;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.btn-primary {
+    background-color: #2A2421;
+    color: #FDFBF7;
+    text-decoration: none;
+    padding: 16px 36px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #A98467;
+}
+
+.hero-image-side {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    height: 550px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(42, 36, 33, 0.06);
+}
+
+.hero-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.services {
+    padding: 100px 5%;
+    border-top: 1px solid rgba(42, 36, 33, 0.05);
+}
+
+.section-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.service-card {
+    background: #ffffff;
+    border: 1px solid rgba(42, 36, 33, 0.06);
+    padding: 40px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(42, 36, 33, 0.03);
+}
+
+.card-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #A98467;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.service-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: #2A2421;
+}
+
+.service-card p {
+    color: rgba(42, 36, 33, 0.65);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.service-card .price {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #2A2421;
+}
+
+.booking-section {
+    padding: 80px 5% 120px 5%;
+    background-color: #F6F3ED; 
+}
+
+.booking-box {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 50px 40px;
+    border-radius: 8px;
+    box-shadow: 0 30px 60px rgba(42, 36, 33, 0.03);
+}
+
+.booking-box h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.booking-subtitle {
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgba(42, 36, 33, 0.6);
+    line-height: 1.5;
+    margin-bottom: 35px;
+}
+
+.salon-form .form-group {
+    margin-bottom: 20px;
+}
+
+.salon-form label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #2A2421;
+    margin-bottom: 8px;
+}
+
+.salon-form input, .salon-form select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid rgba(42, 36, 33, 0.15);
+    border-radius: 4px;
+    background: transparent;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #2A2421;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.salon-form input:focus, .salon-form select:focus {
+    border-color: #A98467;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+footer {
+    border-top: 1px solid rgba(42, 36, 33, 0.05);
+    padding: 35px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: rgba(42, 36, 33, 0.5);
+    letter-spacing: 0.5px;
+}
+
+@media(max-width: 900px) {
+    .hero-container { grid-template-columns: 1fr; gap: 40px; }
+    .hero-image-side { justify-content: center; }
+    .hero-text-side { text-align: center; max-width: 100%; }
+    .hero-text-side h1 { font-size: 3rem; }
+    nav { gap: 15px; }
+}
+
+@media(max-width: 600px) {
+    header { padding: 20px 4%; }
+    .logo { font-size: 1.1rem; }
+    .btn-nav { display: none; } 
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+    .booking-box { padding: 30px 20px; }
+}
