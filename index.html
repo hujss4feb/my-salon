@@ -1,71 +1,194 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glow & Style | Luxury Hair, Nails & Beauty</title>
+    <title>Destello & Estilo | Luxury Salon</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Header / Navigation -->
+    <!-- Header Navigation -->
     <header>
-        <div class="logo">GLOW & STYLE</div>
+        <!-- Brand Name Translates Based on Selected Language -->
+        <div class="logo lang-en" style="display:none;">GLOW & STYLE</div>
+        <div class="logo lang-es">DESTELLO & ESTILO</div>
+        
         <nav>
-            <a href="#services">Services</a>
-            <a href="#book" class="btn-nav">Book Now</a>
+            <a href="#services" class="lang-en" style="display:none;">Services</a>
+            <a href="#services" class="lang-es">Servicios</a>
+            
+            <a href="#book" class="btn-nav lang-en" style="display:none;">Book Session</a>
+            <a href="#book" class="btn-nav lang-es">Reservar Cita</a>
+            
+            <!-- Styled Minimalist Dropdown Container -->
+            <div class="lang-dropdown">
+                <select onchange="switchLanguage(this.value)">
+                    <option value="es" selected>ES</option>
+                    <option value="en">EN</option>
+                </select>
+            </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Modern Asymmetrical Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Elevate Your Natural Beauty</h1>
-            <p>Expert hair styling, pristine nail art, and luxury beauty treatments tailored just for you.</p>
-            <a href="#book" class="btn-primary">Reserve Your Appointment</a>
+        <div class="hero-container">
+            <div class="hero-text-side">
+                <span class="hero-tag lang-en" style="display:none;">HAIR // NAILS // AESTHETICS</span>
+                <span class="hero-tag lang-es">CABELLO // UÑAS // ESTÉTICA</span>
+                
+                <h1 class="lang-en" style="display:none;">Redefining<br>beauty & style.</h1>
+                <h1 class="lang-es">Redefiniendo la<br>belleza y el estilo.</h1>
+                
+                <p class="lang-en" style="display:none;">A premium editorial experience crafted for those who value master-level artistry and modern organic care.</p>
+                <p class="lang-es">Una experiencia premium de nivel editorial, diseñada para quienes valoran el arte maestro y el cuidado moderno.</p>
+                
+                <a href="#book" class="btn-primary lang-en" style="display:none;">Book via WhatsApp</a>
+                <a href="#book" class="btn-primary lang-es">Reservar por WhatsApp</a>
+            </div>
+            
+            <div class="hero-image-side">
+                <div class="hero-image-wrapper">
+                    <!-- Premium Mixed Beauty & Styling Curation Image -->
+                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1200&q=80" alt="Destello & Estilo Curation">
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="services">
-        <h2>Our Services</h2>
+        <div class="section-header">
+            <h2 class="lang-en" style="display:none;">Our Pillars</h2>
+            <h2 class="lang-es">Nuestros Pilares</h2>
+        </div>
+        
         <div class="service-grid">
             <div class="service-card">
-                <h3>Hair Styling</h3>
-                <p>Cuts, blowouts, balayage, and custom coloring treatments.</p>
-                <span class="price">From $45</span>
+                <span class="card-num">01</span>
+                <h3 class="lang-en" style="display:none;">Hair Artistry</h3>
+                <h3 class="lang-es">Arte Capilar</h3>
+                <p class="lang-en" style="display:none;">Cuts, custom balayage, and restorative high-gloss treatments tailored to your structure.</p>
+                <p class="lang-es">Cortes, balayage personalizado y tratamientos restauradores de alto brillo adaptados a ti.</p>
+                <span class="price">€45+</span>
             </div>
+            
             <div class="service-card">
-                <h3>Nail Care</h3>
-                <p>Gel manicures, acrylic extensions, and luxury pedicures.</p>
-                <span class="price">From $35</span>
+                <span class="card-num">02</span>
+                <h3 class="lang-en" style="display:none;">Nail Architecture</h3>
+                <h3 class="lang-es">Arquitectura de Uñas</h3>
+                <p class="lang-en" style="display:none;">Pristine structural gel extensions and avant-garde minimalist nail editorial styles.</p>
+                <p class="lang-es">Extensiones de gel estructurales impecables y estilos de uñas minimalistas de vanguardia.</p>
+                <span class="price">€35+</span>
             </div>
+            
             <div class="service-card">
-                <h3>Beauty & Brows</h3>
-                <p>Lash lifts, brow lamination, and full-face makeup application.</p>
-                <span class="price">From $50</span>
+                <span class="card-num">03</span>
+                <h3 class="lang-en" style="display:none;">Advanced Curation</h3>
+                <h3 class="lang-es">Curación Avanzada</h3>
+                <p class="lang-en" style="display:none;">Lash structural lifting, precise brow laminations, and red-carpet dermal glow formulas.</p>
+                <p class="lang-es">Lifting estructural de pestañas, laminación precisa de cejas y fórmulas de brillo dérmico.</p>
+                <span class="price">€50+</span>
             </div>
         </div>
     </section>
 
     <!-- Booking Section -->
     <section id="book" class="booking-section">
-        <h2>Book Your Session</h2>
-        <p>Select your service, staff member, and preferred time below.</p>
-        
-        <div class="booking-container">
-            <!-- REPLACE THE URL BELOW WITH YOUR ACTUAL CALENDLY/ACUITY EMBED LINK IF DESIRED -->
-            <iframe src="https://calendly.com/huj-ss-4feb/30min" width="100%" height="700" frameborder="0"></iframe>
+        <div class="booking-box">
+            <h2 class="lang-en" style="display:none;">Request an Appointment</h2>
+            <h2 class="lang-es">Solicitar Cita</h2>
+            <p class="booking-subtitle lang-en" style="display:none;">Fill your details below, and it will generate an instant pre-filled text straight to our official WhatsApp.</p>
+            <p class="booking-subtitle lang-es">Complete sus datos a continuación y se generará un texto instantáneo directo a nuestro WhatsApp oficial.</p>
+            
+            <form onsubmit="sendToWhatsApp(event)" class="salon-form">
+                <div class="form-group">
+                    <label class="lang-en" style="display:none;">Full Name</label><label class="lang-es">Nombre Completo</label>
+                    <input type="text" id="clientName" required placeholder="e.g. Vanessa Laurent">
+                </div>
+                
+                <div class="form-group">
+                    <label class="lang-en" style="display:none;">Service Selection</label><label class="lang-es">Selección de Servicio</label>
+                    <select id="clientService" required>
+                        <option value="Hair Artistry">Hair Artistry / Arte Capilar (€45+)</option>
+                        <option value="Nail Architecture">Nail Architecture / Arquitectura de Uñas (€35+)</option>
+                        <option value="Advanced Curation">Advanced Curation / Curación Avanzada (€50+)</option>
+                    </select>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="lang-en" style="display:none;">Preferred Date</label><label class="lang-es">Fecha Preferida</label>
+                        <input type="date" id="clientDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="lang-en" style="display:none;">Preferred Time</label><label class="lang-es">Hora Preferida</label>
+                        <input type="time" id="clientTime" required>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-primary lang-en" style="display:none; width:100%; border:none; text-align:center; margin-top:10px;">Send via WhatsApp</button>
+                <button type="submit" class="btn-primary lang-es" style="width:100%; border:none; text-align:center; margin-top:10px;">Enviar por WhatsApp</button>
+            </form>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Glow & Style Salon. All rights reserved.</p>
+        <p>&copy; 2026 Destello & Estilo. Timeless Elegance. All rights reserved.</p>
     </footer>
+
+    <!-- Scripting for Language Toggle & WhatsApp Transmission -->
+    <script>
+        let currentLang = 'es';
+
+        function switchLanguage(lang) {
+            currentLang = lang;
+            const enElements = document.querySelectorAll('.lang-en');
+            const esElements = document.querySelectorAll('.lang-es');
+            
+            if (lang === 'es') {
+                enElements.forEach(el => el.style.display = 'none');
+                esElements.forEach(el => el.style.display = 'inline-block');
+            } else {
+                esElements.forEach(el => el.style.display = 'none');
+                enElements.forEach(el => el.style.display = 'inline-block');
+            }
+        }
+
+        function sendToWhatsApp(event) {
+            event.preventDefault();
+            
+            // LINE 120: REPLACE THE NUMBERS BELOW WITH YOUR WHATSAPP PHONE NUMBER (Country code first, no spaces, no + sign)
+            const salonPhoneNumber = "34677633715"; 
+
+            const name = document.getElementById('clientName').value;
+            const service = document.getElementById('clientService').value;
+            const date = document.getElementById('clientDate').value;
+            const time = document.getElementById('clientTime').value;
+
+            let message = "";
+            if (currentLang === 'es') {
+                message = `¡Hola Destello & Estilo! Deseo agendar una cita:%0A%0A` +
+                          `• *Cliente:* ${name}%0A` +
+                          `• *Servicio:* ${service}%0A` +
+                          `• *Fecha:* ${date}%0A` +
+                          `• *Hora:* ${time}`;
+            } else {
+                message = `Hello Glow & Style! I'd like to request an appointment:%0A%0A` +
+                          `• *Client:* ${name}%0A` +
+                          `• *Service:* ${service}%0A` +
+                          `• *Date:* ${date}%0A` +
+                          `• *Time:* ${time}`;
+            }
+
+            window.open(`https://wa.me/${salonPhoneNumber}?text=${message}`, '_blank');
+        }
+    </script>
 
 </body>
 </html>
