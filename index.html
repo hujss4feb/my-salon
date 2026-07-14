@@ -3,24 +3,562 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Destello & Estilo | Luxury Salon</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Linda Hair & Makeup Salon | Luxury Salon</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Secure configuration file import -->
+    <script src="config.js"></script>
+
+    <style>
+        /* Modern Reset & Variable Setup */
+        :root {
+            --color-bg: #FDFBF7;
+            --color-primary: #2A2421;
+            --color-accent: #A98467;
+            --color-accent-light: rgba(169, 132, 103, 0.15);
+            --color-card-bg: #ffffff;
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-sans: 'Plus Jakarta Sans', sans-serif;
+            --whatsapp-green: #25D366;
+            --email-blue: #EA4335;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-bg); 
+            color: var(--color-primary); 
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Language Toggle Utility Class */
+        .hide {
+            display: none !important;
+        }
+
+        /* Responsive Navigation Bar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background-color: rgba(253, 251, 247, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(42, 36, 33, 0.05);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo-container svg {
+            width: 240px; 
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-container:hover svg {
+            transform: scale(1.01);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: rgba(42, 36, 33, 0.7);
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+        }
+
+        nav a:hover {
+            color: var(--color-accent); 
+        }
+
+        .btn-nav {
+            background-color: var(--color-primary);
+            color: var(--color-bg) !important;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 0.8rem !important;
+            letter-spacing: 1.5px;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-nav:hover {
+            background-color: var(--color-accent);
+        }
+
+        .lang-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .lang-dropdown select {
+            background: transparent;
+            color: var(--color-primary);
+            border: 1px solid rgba(42, 36, 33, 0.2);
+            padding: 6px 24px 6px 10px;
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            outline: none;
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232A2421' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+            background-size: 8px;
+        }
+
+        /* Responsive Hero Section */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            padding: 60px 5%;
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 50px;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-text-side {
+            width: 100%;
+        }
+
+        .hero-tag {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: var(--color-accent);
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .hero-text-side h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 4.5vw, 4rem); 
+            font-weight: 400;
+            line-height: 1.15;
+            color: var(--color-primary);
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .hero-text-side p {
+            font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+            color: rgba(42, 36, 33, 0.7);
+            line-height: 1.7;
+            margin-bottom: 40px;
+            font-weight: 300;
+            display: block;
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: var(--color-bg);
+            text-decoration: none;
+            padding: 16px 36px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-align: center;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-accent);
+        }
+
+        .hero-image-side {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        /* Collage Grid */
+        .hero-collage {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 16px;
+            width: 100%;
+            max-width: 460px;
+            aspect-ratio: 4/5;
+        }
+
+        .collage-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(42, 36, 33, 0.08);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .collage-item:hover {
+            transform: translateY(-5px) scale(1.02);
+            z-index: 2;
+        }
+
+        .collage-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .collage-hair { grid-column: 1 / 2; grid-row: 1 / 3; }
+        .collage-nails { grid-column: 2 / 3; grid-row: 1 / 2; }
+        .collage-facial { grid-column: 2 / 3; grid-row: 2 / 3; }
+
+        /* Elegant Services Section - Hardened & Compacted */
+        .services {
+            padding: 100px 5%;
+            border-top: 1px solid rgba(42, 36, 33, 0.05);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 70px;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.2rem, 3.5vw, 2.8rem);
+            font-weight: 400;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .service-container {
+            max-width: 750px; /* Reduced to look high-end and not overly expanded */
+            margin: 0 auto;
+        }
+
+        .service-list-item {
+            display: grid;
+            grid-template-columns: 2.5fr 1.5fr 1fr;
+            align-items: center;
+            padding: 24px 0;
+            border-bottom: 1px solid rgba(42, 36, 33, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .service-list-item:hover {
+            background-color: rgba(42, 36, 33, 0.01);
+            border-bottom-color: var(--color-accent);
+        }
+
+        .category-name {
+            font-family: var(--font-serif);
+            font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+            font-weight: 500;
+            color: var(--color-primary);
+        }
+
+        .treatment-count {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--color-accent);
+            text-transform: uppercase;
+            text-align: center; /* Centered column alignment */
+        }
+
+        .price-from {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 12px;
+            text-align: right;
+        }
+
+        .price-label {
+            font-size: 0.75rem;
+            color: rgba(42, 36, 33, 0.5);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .price-value {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--color-primary);
+            min-width: 50px;
+            text-align: right;
+        }
+
+        .service-list-item:hover .price-value {
+            color: var(--color-accent);
+        }
+
+        /* Booking Section */
+        .booking-section {
+            padding: 80px 5% 100px 5%;
+            background-color: #F6F3ED; 
+        }
+
+        .booking-box {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--color-card-bg);
+            padding: 50px 40px;
+            border-radius: 8px;
+            box-shadow: 0 30px 60px rgba(42, 36, 33, 0.03);
+        }
+
+        .booking-box h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .booking-subtitle {
+            text-align: center;
+            font-size: 0.9rem;
+            color: rgba(42, 36, 33, 0.6);
+            line-height: 1.5;
+            margin-bottom: 35px;
+        }
+
+        .salon-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .salon-form label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--color-primary);
+            margin-bottom: 8px;
+        }
+
+        .salon-form input, .salon-form select {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid rgba(42, 36, 33, 0.15);
+            border-radius: 4px;
+            background: transparent;
+            font-family: var(--font-sans);
+            color: var(--color-primary);
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* Modern Contact Us Section */
+        .contact-section {
+            padding: 90px 5%;
+            background-color: var(--color-bg);
+            border-top: 1px solid rgba(42, 36, 33, 0.05);
+        }
+
+        .contact-container {
+            max-width: 950px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .contact-text-side h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 3.5vw, 2.6rem);
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+
+        .contact-text-side p {
+            font-size: 0.95rem;
+            color: rgba(42, 36, 33, 0.6);
+            line-height: 1.6;
+        }
+
+        .contact-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 24px;
+            background: var(--color-card-bg);
+            border: 1px solid rgba(42, 36, 33, 0.05);
+            border-radius: 8px;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 4px 20px rgba(42, 36, 33, 0.01);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .contact-card.whatsapp-card:hover { border-color: var(--whatsapp-green); }
+        .contact-card.email-card:hover { border-color: var(--email-blue); }
+
+        .contact-icon-wrapper {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background-color: #FAF6F0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-card.whatsapp-card:hover .contact-icon-wrapper { background-color: rgba(37, 211, 102, 0.1); }
+        .contact-card.email-card:hover .contact-icon-wrapper { background-color: rgba(234, 67, 53, 0.1); }
+
+        /* Rebuilt SVG styles for crisp visibility */
+        .contact-icon-wrapper svg {
+            width: 28px;
+            height: 28px;
+            display: block;
+        }
+
+        .contact-info-text {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .contact-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--color-accent);
+        }
+
+        .contact-value {
+            font-family: var(--font-sans);
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: var(--color-primary);
+        }
+
+        footer {
+            border-top: 1px solid rgba(42, 36, 33, 0.05);
+            padding: 35px 20px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: rgba(42, 36, 33, 0.5);
+        }
+
+        /* MEDIA QUERIES FOR TABLET & MOBILE RESPONSIVENESS */
+        @media (max-width: 900px) {
+            .hero { padding: 40px 5%; min-height: auto; }
+            .hero-container { grid-template-columns: 1fr; gap: 50px; text-align: center; }
+            .hero-text-side { display: flex; flex-direction: column; align-items: center; }
+            .hero-image-side { justify-content: center; }
+            .contact-container { grid-template-columns: 1fr; text-align: center; }
+            .contact-card { text-align: left; }
+        }
+
+        @media (max-width: 650px) {
+            header { padding: 12px 15px; }
+            .logo-container svg { width: 180px; }
+            nav { gap: 12px; }
+            .btn-nav { display: none; }
+            .form-row { grid-template-columns: 1fr; }
+            
+            /* Responsive layout for smaller viewports */
+            .service-list-item {
+                grid-template-columns: 1fr;
+                gap: 8px;
+                padding: 18px 0;
+            }
+            .treatment-count { text-align: left; margin-bottom: 4px; }
+            .price-from { justify-content: flex-start; }
+        }
+    </style>
 </head>
 <body>
 
     <!-- Header Navigation -->
     <header>
-        <div class="logo lang-en" style="display:none;">GLOW & STYLE</div>
-        <div class="logo lang-es">DESTELLO & ESTILO</div>
+        <a href="#" class="logo-container">
+            <svg viewBox="0 0 320 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="roseGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#FFE3E8" />
+                        <stop offset="50%" stop-color="#F79AA8" />
+                        <stop offset="100%" stop-color="#E25C70" />
+                    </linearGradient>
+                </defs>
+                <!-- Central Icon Alignment -->
+                <g transform="translate(10, 0)">
+                    <path d="M135 95 C 105 100, 85 80, 90 58 C 95 35, 122 30, 135 48 Z" fill="url(#roseGradient)" opacity="0.85"/>
+                    <path d="M165 95 C 195 100, 215 80, 210 58 C 205 35, 178 30, 165 48 Z" fill="url(#roseGradient)" opacity="0.85"/>
+                    <path d="M150 105 C 122 105, 112 83, 117 60 C 122 33, 150 22, 150 22 C 150 22, 178 33, 183 60 C 188 83, 178 105, 150 105 Z" fill="url(#roseGradient)"/>
+                </g>
+                <!-- Brand Text Alignment -->
+                <text x="160" y="152" font-family="'Cormorant Garamond', serif" font-size="25" font-weight="500" letter-spacing="4" text-anchor="middle" fill="#2A2421">LINDA HAIR</text>
+                <text x="160" y="178" font-family="'Cormorant Garamond', serif" font-size="12" font-weight="600" letter-spacing="5.5" text-anchor="middle" fill="#A98467">&amp; MAKEUP SALON</text>
+            </svg>
+        </a>
         
         <nav>
-            <a href="#services" class="lang-en" style="display:none;">Services</a>
+            <a href="#services" class="lang-en hide">Services</a>
             <a href="#services" class="lang-es">Servicios</a>
             
-            <a href="#book" class="btn-nav lang-en" style="display:none;">Book Session</a>
+            <a href="#book" class="btn-nav lang-en hide">Book Session</a>
             <a href="#book" class="btn-nav lang-es">Reservar Cita</a>
             
             <div class="lang-dropdown">
@@ -32,115 +570,325 @@
         </nav>
     </header>
 
-    <!-- Modern Asymmetrical Hero Section -->
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-container">
             <div class="hero-text-side">
-                <span class="hero-tag lang-en" style="display:none;">HAIR // NAILS // AESTHETICS</span>
+                <span class="hero-tag lang-en hide">HAIR // NAILS // AESTHETICS</span>
                 <span class="hero-tag lang-es">CABELLO // UÑAS // ESTÉTICA</span>
                 
-                <h1 class="lang-en" style="display:none;">Redefining<br>beauty & style.</h1>
+                <h1 class="lang-en hide">Redefining<br>beauty & style.</h1>
                 <h1 class="lang-es">Redefiniendo la<br>belleza y el estilo.</h1>
                 
-                <p class="lang-en" style="display:none;">A premium editorial experience crafted for those who value master-level artistry and modern organic care.</p>
+                <p class="lang-en hide">A premium experience crafted for those who value master-level artistry and modern organic care.</p>
                 <p class="lang-es">Una experiencia premium de nivel editorial, diseñada para quienes valoran el arte maestro y el cuidado moderno.</p>
                 
-                <a href="#book" class="btn-primary lang-en" style="display:none;">Book via WhatsApp</a>
+                <a href="#book" class="btn-primary lang-en hide">Book via WhatsApp</a>
                 <a href="#book" class="btn-primary lang-es">Reservar por WhatsApp</a>
             </div>
             
             <div class="hero-image-side">
-                <div class="hero-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1200&q=80" alt="Destello & Estilo Curation">
+                <div class="hero-collage">
+                    <div class="collage-item collage-hair">
+                        <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=80" alt="Hair Styling">
+                    </div>
+                    <div class="collage-item collage-nails">
+                        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=600&q=80" alt="Manicure">
+                    </div>
+                    <div class="collage-item collage-facial">
+                        <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=600&q=80" alt="Facial Treatment">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Luxury Services Section -->
     <section id="services" class="services">
         <div class="section-header">
-            <h2 class="lang-en" style="display:none;">Our Pillars</h2>
-            <h2 class="lang-es">Nuestros Pilares</h2>
+            <!-- Wrapped strictly in separate classes to secure absolute centering on translation -->
+            <h2 class="lang-en hide">Service Menu</h2>
+            <h2 class="lang-es">Menú de Servicios</h2>
         </div>
         
-        <div class="service-grid">
-            <div class="service-card">
-                <span class="card-num">01</span>
-                <h3 class="lang-en" style="display:none;">Hair Artistry</h3>
-                <h3 class="lang-es">Arte Capilar</h3>
-                <p class="lang-en" style="display:none;">Cuts, custom balayage, and restorative high-gloss treatments tailored to your structure.</p>
-                <p class="lang-es">Cortes, balayage personalizado y tratamientos restauradores de alto brillo adaptados a ti.</p>
-                <span class="price">€45+</span>
-            </div>
+        <div class="service-container">
             
-            <div class="service-card">
-                <span class="card-num">02</span>
-                <h3 class="lang-en" style="display:none;">Nail Architecture</h3>
-                <h3 class="lang-es">Arquitectura de Uñas</h3>
-                <p class="lang-en" style="display:none;">Pristine structural gel extensions and avant-garde minimalist nail editorial styles.</p>
-                <p class="lang-es">Extensiones de gel estructurales impecables y estilos de uñas minimalistas de vanguardia.</p>
-                <span class="price">€35+</span>
+            <!-- Corte para Mujer -->
+            <div class="service-list-item">
+                <h3 class="category-name lang-es">Corte para Mujer</h3>
+                <h3 class="category-name lang-en hide">Women's Cut</h3>
+                <span class="treatment-count">5 Tratamientos</span>
+                <div class="price-from">
+                    <span class="price-label lang-es">desde</span>
+                    <span class="price-label lang-en hide">from</span>
+                    <span class="price-value">20 €</span>
+                </div>
             </div>
-            
-            <div class="service-card">
-                <span class="card-num">03</span>
-                <h3 class="lang-en" style="display:none;">Advanced Curation</h3>
-                <h3 class="lang-es">Curación Avanzada</h3>
-                <p class="lang-en" style="display:none;">Lash structural lifting, precise brow laminations, and red-carpet dermal glow formulas.</p>
-                <p class="lang-es">Lifting estructural de pestañas, laminación precisa de cejas y fórmulas de brillo dérmico.</p>
-                <span class="price">€50+</span>
+
+            <!-- Tinte / Color -->
+            <div class="service-list-item">
+                <h3 class="category-name lang-es">Tinte / Color</h3>
+                <h3 class="category-name lang-en hide">Tint / Color</h3>
+                <span class="treatment-count">6 Tratamientos</span>
+                <div class="price-from">
+                    <span class="price-label lang-es">desde</span>
+                    <span class="price-label lang-en hide">from</span>
+                    <span class="price-value">45 €</span>
+                </div>
             </div>
+
+            <!-- Mechas -->
+            <div class="service-list-item">
+                <h3 class="category-name lang-es">Mechas</h3>
+                <h3 class="category-name lang-en hide">Highlights</h3>
+                <span class="treatment-count">9 Tratamientos</span>
+                <div class="price-from">
+                    <span class="price-label lang-es">desde</span>
+                    <span class="price-label lang-en hide">from</span>
+                    <span class="price-value">80 €</span>
+                </div>
+            </div>
+
+            <!-- Peinados -->
+            <div class="service-list-item">
+                <h3 class="category-name lang-es">Peinados</h3>
+                <h3 class="category-name lang-en hide">Hairstyles</h3>
+                <span class="treatment-count">11 Tratamientos</span>
+                <div class="price-from">
+                    <span class="price-label lang-es">desde</span>
+                    <span class="price-label lang-en hide">from</span>
+                    <span class="price-value">25 €</span>
+                </div>
+            </div>
+
+            <!-- Alisados -->
+            <div class="service-list-item">
+                <h3 class="category-name lang-es">Alisados</h3>
+                <h3 class="category-name lang-en hide">Straightening</h3>
+                <span class="treatment-count">9 Tratamientos</span>
+                <div class="price-from">
+                    <span class="price-label lang-es">desde</span>
+                    <span class="price-label lang-en hide">from</span>
+                    <span class="price-value">80 €</span>
+                </div>
+            </div>
+
+            <!-- Salud Capilar -->
+            <div class="service-list-item">
+                <h3 class="category-name lang-es">Salud Capilar</h3>
+                <h3 class="category-name lang-en hide">Capillary Health</h3>
+                <span class="treatment-count">4 Tratamientos</span>
+                <div class="price-from">
+                    <span class="price-label lang-es">desde</span>
+                    <span class="price-label lang-en hide">from</span>
+                    <span class="price-value">35 €</span>
+                </div>
+            </div>
+
+            <!-- Manicura -->
+            <div class="service-list-item">
+                <h3 class="category-name lang-es">Manicura</h3>
+                <h3 class="category-name lang-en hide">Manicure</h3>
+                <span class="treatment-count">16 Tratamientos</span>
+                <div class="price-from">
+                    <span class="price-label lang-es">desde</span>
+                    <span class="price-label lang-en hide">from</span>
+                    <span class="price-value">1 €</span>
+                </div>
+            </div>
+
+            <!-- Pedicuras Y Tratamientos -->
+            <div class="service-list-item">
+                <h3 class="category-name lang-es">Pedicuras Y Tratamientos</h3>
+                <h3 class="category-name lang-en hide">Pedicures & Treatments</h3>
+                <span class="treatment-count">8 Tratamientos</span>
+                <div class="price-from">
+                    <span class="price-label lang-es">desde</span>
+                    <span class="price-label lang-en hide">from</span>
+                    <span class="price-value">10 €</span>
+                </div>
+            </div>
+
+            <!-- Depilación De Cejas -->
+            <div class="service-list-item">
+                <h3 class="category-name lang-es">Depilación De Cejas</h3>
+                <h3 class="category-name lang-en hide">Eyebrow Waxing</h3>
+                <span class="treatment-count">2 Tratamientos</span>
+                <div class="price-from">
+                    <span class="price-label lang-es">desde</span>
+                    <span class="price-label lang-en hide">from</span>
+                    <span class="price-value">10 €</span>
+                </div>
+            </div>
+
+            <!-- Cejas Y Pestañas -->
+            <div class="service-list-item">
+                <h3 class="category-name lang-es">Cejas Y Pestañas</h3>
+                <h3 class="category-name lang-en hide">Brows & Lashes</h3>
+                <span class="treatment-count">5 Tratamientos</span>
+                <div class="price-from">
+                    <span class="price-label lang-es">desde</span>
+                    <span class="price-label lang-en hide">from</span>
+                    <span class="price-value">15 €</span>
+                </div>
+            </div>
+
+            <!-- Extensiones Y Lifting -->
+            <div class="service-list-item">
+                <h3 class="category-name lang-es">Extensiones Y Lifting</h3>
+                <h3 class="category-name lang-en hide">Extensions & Lifting</h3>
+                <span class="treatment-count">7 Tratamientos</span>
+                <div class="price-from">
+                    <span class="price-label lang-es">desde</span>
+                    <span class="price-label lang-en hide">from</span>
+                    <span class="price-value">15 €</span>
+                </div>
+            </div>
+
+            <!-- Tratamientos Faciales -->
+            <div class="service-list-item">
+                <h3 class="category-name lang-es">Tratamientos Faciales</h3>
+                <h3 class="category-name lang-en hide">Facial Treatments</h3>
+                <span class="treatment-count">1 Tratamiento</span>
+                <div class="price-from">
+                    <span class="price-label lang-es">desde</span>
+                    <span class="price-label lang-en hide">from</span>
+                    <span class="price-value">65 €</span>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <!-- Booking Section -->
     <section id="book" class="booking-section">
         <div class="booking-box">
-            <h2 class="lang-en" style="display:none;">Request an Appointment</h2>
+            <h2 class="lang-en hide">Request an Appointment</h2>
             <h2 class="lang-es">Solicitar Cita</h2>
-            <p class="booking-subtitle lang-en" style="display:none;">Fill your details below, and it will generate an instant pre-filled text straight to our official WhatsApp.</p>
+            <p class="booking-subtitle lang-en hide">Fill your details below, and it will generate an instant pre-filled text straight to our official WhatsApp.</p>
             <p class="booking-subtitle lang-es">Complete sus datos a continuación y se generará un texto instantáneo directo a nuestro WhatsApp oficial.</p>
             
             <form onsubmit="sendToWhatsApp(event)" class="salon-form">
                 <div class="form-group">
-                    <label class="lang-en" style="display:none;">Full Name</label><label class="lang-es">Nombre Completo</label>
+                    <label class="lang-en hide">Full Name</label><label class="lang-es">Nombre Completo</label>
                     <input type="text" id="clientName" required placeholder="e.g. Vanessa Laurent">
                 </div>
                 
                 <div class="form-group">
-                    <label class="lang-en" style="display:none;">Service Selection</label><label class="lang-es">Selección de Servicio</label>
+                    <label class="lang-en hide">Service Selection</label><label class="lang-es">Selección de Servicio</label>
                     <select id="clientService" required>
-                        <option value="Hair Artistry">Hair Artistry / Arte Capilar (€45+)</option>
-                        <option value="Nail Architecture">Nail Architecture / Arquitectura de Uñas (€35+)</option>
-                        <option value="Advanced Curation">Advanced Curation / Curación Avanzada (€50+)</option>
+                        <option value="Corte para Mujer">Corte para Mujer (desde 20€)</option>
+                        <option value="Tinte / Color">Tinte / Color (desde 45€)</option>
+                        <option value="Mechas">Mechas (desde 80€)</option>
+                        <option value="Peinados">Peinados (desde 25€)</option>
+                        <option value="Alisados">Alisados (desde 80€)</option>
+                        <option value="Salud Capilar">Salud Capilar (desde 35€)</option>
+                        <option value="Manicura">Manicura (desde 1€)</option>
+                        <option value="Pedicuras Y Tratamientos">Pedicuras Y Tratamientos (desde 10€)</option>
+                        <option value="Depilación De Cejas">Depilación De Cejas (desde 10€)</option>
+                        <option value="Cejas Y Pestañas">Cejas Y Pestañas (desde 15€)</option>
+                        <option value="Extensiones Y Lifting">Extensiones Y Lifting (desde 15€)</option>
+                        <option value="Tratamientos Faciales">Tratamientos Faciales (65€)</option>
                     </select>
                 </div>
                 
                 <div class="form-row">
                     <div class="form-group">
-                        <label class="lang-en" style="display:none;">Preferred Date</label><label class="lang-es">Fecha Preferida</label>
+                        <label class="lang-en hide">Preferred Date</label><label class="lang-es">Fecha Preferida</label>
                         <input type="date" id="clientDate" required>
                     </div>
                     <div class="form-group">
-                        <label class="lang-en" style="display:none;">Preferred Time</label><label class="lang-es">Hora Preferida</label>
+                        <label class="lang-en hide">Preferred Time</label><label class="lang-es">Hora Preferida</label>
                         <input type="time" id="clientTime" required>
                     </div>
                 </div>
                 
-                <button type="submit" class="btn-primary lang-en" style="display:none; width:100%; border:none; text-align:center; margin-top:10px;">Send via WhatsApp</button>
+                <button type="submit" class="btn-primary lang-en hide" style="width:100%; border:none; text-align:center; margin-top:10px;">Send via WhatsApp</button>
                 <button type="submit" class="btn-primary lang-es" style="width:100%; border:none; text-align:center; margin-top:10px;">Enviar por WhatsApp</button>
             </form>
         </div>
     </section>
 
+    <!-- Secure Contact Section with Refined, Visible Vector Icons -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <div class="contact-text-side">
+                <h2 class="lang-en hide">Get in Touch</h2>
+                <h2 class="lang-es">Ponte en Contacto</h2>
+                <p class="lang-en hide">Have a question about our services or need assistance? Connect with us directly on your preferred channel.</p>
+                <p class="lang-es">¿Tiene alguna duda sobre nuestros servicios o necesita ayuda? Escríbanos directamente a través de su canal preferido.</p>
+            </div>
+            
+            <div class="contact-cards">
+                <!-- WhatsApp Card -->
+                <a href="#" id="secureWhatsAppLink" target="_blank" class="contact-card whatsapp-card">
+                    <div class="contact-icon-wrapper">
+                        <!-- Redesigned High-Definition Vector Logo to guarantee complete visibility on all rendering engines -->
+                        <svg viewBox="0 0 448 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L3 512l148.5-39c32.8 17.9 69.6 27.3 107.4 27.3 122.4 0 222-99.6 222-222 0-59.3-23.2-115-65.1-157.1zM223.9 474c-33.2 0-65.7-8.9-94-25.7l-6.7-4-88.1 23.1 23.5-85.8-4.4-7C35.7 340.2 26 306.3 26 271.4c0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" fill="#25D366"/>
+                        </svg>
+                    </div>
+                    <div class="contact-info-text">
+                        <span class="contact-label">WhatsApp</span>
+                        <span class="contact-value" id="secureWhatsAppLabel">Cargando...</span>
+                    </div>
+                </a>
+
+                <!-- Email Card -->
+                <a href="#" id="secureEmailLink" class="contact-card email-card">
+                    <div class="contact-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="#EA4335"/>
+                        </svg>
+                    </div>
+                    <div class="contact-info-text">
+                        <span class="contact-label">Email</span>
+                        <span class="contact-value" id="secureEmailLabel">Cargando...</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Destello & Estilo. Timeless Elegance. All rights reserved.</p>
+        <p>&copy; 2026 Linda Hair & Makeup Salon. All rights reserved.</p>
     </footer>
 
     <script>
         let currentLang = 'es';
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const securePhone = (typeof CONFIG !== 'undefined' && CONFIG.SALON_PHONE_NUMBER !== 'YOUR_PHONE_NUMBER_HERE') ? CONFIG.SALON_PHONE_NUMBER : "";
+            const secureEmail = (typeof CONFIG !== 'undefined' && CONFIG.SALON_EMAIL !== 'your_email@example.com') ? CONFIG.SALON_EMAIL : "";
+
+            const waLabel = document.getElementById('secureWhatsAppLabel');
+            const waLink = document.getElementById('secureWhatsAppLink');
+            const emailLabel = document.getElementById('secureEmailLabel');
+            const emailLink = document.getElementById('secureEmailLink');
+
+            if (securePhone) {
+                let formattedPhone = securePhone;
+                if (securePhone.startsWith('34') && securePhone.length === 11) {
+                    formattedPhone = `+34 ${securePhone.slice(2, 5)} ${securePhone.slice(5, 8)} ${securePhone.slice(8)}`;
+                } else {
+                    formattedPhone = `+${securePhone}`;
+                }
+                waLabel.innerText = formattedPhone;
+                waLink.href = `https://wa.me/${securePhone}`;
+            } else {
+                waLabel.innerText = "+34 123 456 789";
+                waLink.href = "#";
+            }
+
+            if (secureEmail) {
+                emailLabel.innerText = secureEmail;
+                emailLink.href = `mailto:${secureEmail}`;
+            } else {
+                emailLabel.innerText = "contact@yourdomain.com";
+                emailLink.href = "#";
+            }
+        });
 
         function switchLanguage(lang) {
             currentLang = lang;
@@ -148,19 +896,17 @@
             const esElements = document.querySelectorAll('.lang-es');
             
             if (lang === 'es') {
-                enElements.forEach(el => el.style.display = 'none');
-                esElements.forEach(el => el.style.display = 'inline-block');
+                enElements.forEach(el => el.classList.add('hide'));
+                esElements.forEach(el => el.classList.remove('hide'));
             } else {
-                esElements.forEach(el => el.style.display = 'none');
-                enElements.forEach(el => el.style.display = 'inline-block');
+                esElements.forEach(el => el.classList.add('hide'));
+                enElements.forEach(el => el.classList.remove('hide'));
             }
         }
 
         function sendToWhatsApp(event) {
             event.preventDefault();
-            
-            // PASTE YOUR WHATSAPP PHONE NUMBER HERE (Country code first, no spaces, no + sign)
-            const salonPhoneNumber = "34123456789"; 
+            const salonPhoneNumber = (typeof CONFIG !== 'undefined' && CONFIG.SALON_PHONE_NUMBER !== 'YOUR_PHONE_NUMBER_HERE') ? CONFIG.SALON_PHONE_NUMBER : "34000000000";
 
             const name = document.getElementById('clientName').value;
             const service = document.getElementById('clientService').value;
@@ -169,22 +915,12 @@
 
             let message = "";
             if (currentLang === 'es') {
-                message = `¡Hola Destello & Estilo! Deseo agendar una cita:%0A%0A` +
-                          `• *Cliente:* ${name}%0A` +
-                          `• *Servicio:* ${service}%0A` +
-                          `• *Fecha:* ${date}%0A` +
-                          `• *Hora:* ${time}`;
+                message = `¡Hola Linda Hair & Makeup Salon! Deseo agendar una cita:%0A%0A• *Cliente:* ${name}%0A• *Servicio:* ${service}%0A• *Fecha:* ${date}%0A• *Hora:* ${time}`;
             } else {
-                message = `Hello Glow & Style! I'd like to request an appointment:%0A%0A` +
-                          `• *Client:* ${name}%0A` +
-                          `• *Service:* ${service}%0A` +
-                          `• *Date:* ${date}%0A` +
-                          `• *Time:* ${time}`;
+                message = `Hello Linda Hair & Makeup Salon! I'd like to request an appointment:%0A%0A• *Client:* ${name}%0A• *Service:* ${service}%0A• *Date:* ${date}%0A• *Time:* ${time}`;
             }
-
             window.open(`https://wa.me/${salonPhoneNumber}?text=${message}`, '_blank');
         }
     </script>
-
 </body>
 </html>
