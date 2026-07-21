@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Linda Hair & Makeup Salon | Luxury Salon</title>
+    <title>Linda Haris & Makeup Salon | Luxury Salon</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -21,8 +21,6 @@
             --color-card-bg: #ffffff;
             --font-serif: 'Cormorant Garamond', serif;
             --font-sans: 'Plus Jakarta Sans', sans-serif;
-            --whatsapp-green: #25D366;
-            --email-blue: #EA4335;
         }
 
         * {
@@ -246,7 +244,7 @@
         .collage-nails { grid-column: 2 / 3; grid-row: 1 / 2; }
         .collage-facial { grid-column: 2 / 3; grid-row: 2 / 3; }
 
-        /* Elegant Services Section - Hardened & Compacted */
+        /* Elegant Services Section */
         .services {
             padding: 100px 5%;
             border-top: 1px solid rgba(42, 36, 33, 0.05);
@@ -269,7 +267,7 @@
         }
 
         .service-container {
-            max-width: 750px; /* Reduced to look high-end and not overly expanded */
+            max-width: 750px;
             margin: 0 auto;
         }
 
@@ -300,7 +298,7 @@
             letter-spacing: 2px;
             color: var(--color-accent);
             text-transform: uppercase;
-            text-align: center; /* Centered column alignment */
+            text-align: center;
         }
 
         .price-from {
@@ -331,10 +329,103 @@
             color: var(--color-accent);
         }
 
+        /* Transformations Section Styles */
+        .transformations-section {
+            padding: 100px 5%;
+            background-color: #F6F3ED;
+            border-top: 1px solid rgba(42, 36, 33, 0.05);
+        }
+
+        .transformations-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .transformation-card {
+            background: var(--color-card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(42, 36, 33, 0.05);
+            border: 1px solid rgba(42, 36, 33, 0.05);
+        }
+
+        .comparison-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: 240px;
+            position: relative;
+        }
+
+        .comparison-pane {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .comparison-pane img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .comparison-badge {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(42, 36, 33, 0.8);
+            color: #fff;
+            padding: 4px 10px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 3px;
+        }
+
+        .transformation-details {
+            padding: 25px;
+        }
+
+        .transformation-details h3 {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .transformation-details p {
+            font-size: 0.9rem;
+            color: rgba(42, 36, 33, 0.7);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .btn-redirect {
+            background: transparent;
+            color: var(--color-accent);
+            border: 1px solid var(--color-accent);
+            padding: 10px 20px;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-redirect:hover {
+            background: var(--color-accent);
+            color: #fff;
+        }
+
         /* Booking Section */
         .booking-section {
             padding: 80px 5% 100px 5%;
-            background-color: #F6F3ED; 
+            background-color: var(--color-bg); 
         }
 
         .booking-box {
@@ -397,7 +488,7 @@
         /* Modern Contact Us Section */
         .contact-section {
             padding: 90px 5%;
-            background-color: var(--color-bg);
+            background-color: #F6F3ED;
             border-top: 1px solid rgba(42, 36, 33, 0.05);
         }
 
@@ -423,6 +514,44 @@
             line-height: 1.6;
         }
 
+        /* Social Pill Buttons Row */
+        .social-buttons-row {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-pill-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 22px;
+            background: var(--color-card-bg);
+            border: 1px solid rgba(42, 36, 33, 0.1);
+            border-radius: 4px;
+            text-decoration: none;
+            color: var(--color-primary);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            box-shadow: 0 2px 10px rgba(42, 36, 33, 0.02);
+            transition: all 0.3s ease;
+        }
+
+        .social-pill-btn:hover {
+            border-color: var(--color-accent);
+            background: var(--color-accent-light);
+            color: var(--color-accent);
+        }
+
+        .social-pill-btn svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
         .contact-cards {
             display: flex;
             flex-direction: column;
@@ -445,31 +574,35 @@
 
         .contact-card:hover {
             transform: translateY(-3px);
+            border-color: var(--color-accent);
         }
 
-        .contact-card.whatsapp-card:hover { border-color: var(--whatsapp-green); }
-        .contact-card.email-card:hover { border-color: var(--email-blue); }
-
         .contact-icon-wrapper {
-            width: 52px;
-            height: 52px;
+            width: 56px;
+            height: 56px;
             border-radius: 50%;
             background-color: #FAF6F0;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
             transition: background-color 0.3s ease;
         }
 
-        .contact-card.whatsapp-card:hover .contact-icon-wrapper { background-color: rgba(37, 211, 102, 0.1); }
-        .contact-card.email-card:hover .contact-icon-wrapper { background-color: rgba(234, 67, 53, 0.1); }
+        .contact-card:hover .contact-icon-wrapper {
+            background-color: var(--color-accent-light);
+        }
 
-        /* Rebuilt SVG styles for crisp visibility */
         .contact-icon-wrapper svg {
-            width: 28px;
-            height: 28px;
+            width: 24px;
+            height: 24px;
             display: block;
+            stroke: var(--color-accent);
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
         }
 
         .contact-info-text {
@@ -509,6 +642,7 @@
             .hero-image-side { justify-content: center; }
             .contact-container { grid-template-columns: 1fr; text-align: center; }
             .contact-card { text-align: left; }
+            .social-buttons-row { justify-content: center; }
         }
 
         @media (max-width: 650px) {
@@ -518,7 +652,6 @@
             .btn-nav { display: none; }
             .form-row { grid-template-columns: 1fr; }
             
-            /* Responsive layout for smaller viewports */
             .service-list-item {
                 grid-template-columns: 1fr;
                 gap: 8px;
@@ -526,6 +659,8 @@
             }
             .treatment-count { text-align: left; margin-bottom: 4px; }
             .price-from { justify-content: flex-start; }
+            .social-buttons-row { flex-direction: column; width: 100%; }
+            .social-pill-btn { width: 100%; }
         }
     </style>
 </head>
@@ -542,27 +677,31 @@
                         <stop offset="100%" stop-color="#E25C70" />
                     </linearGradient>
                 </defs>
-                <!-- Central Icon Alignment -->
                 <g transform="translate(10, 0)">
                     <path d="M135 95 C 105 100, 85 80, 90 58 C 95 35, 122 30, 135 48 Z" fill="url(#roseGradient)" opacity="0.85"/>
                     <path d="M165 95 C 195 100, 215 80, 210 58 C 205 35, 178 30, 165 48 Z" fill="url(#roseGradient)" opacity="0.85"/>
                     <path d="M150 105 C 122 105, 112 83, 117 60 C 122 33, 150 22, 150 22 C 150 22, 178 33, 183 60 C 188 83, 178 105, 150 105 Z" fill="url(#roseGradient)"/>
                 </g>
-                <!-- Brand Text Alignment -->
-                <text x="160" y="152" font-family="'Cormorant Garamond', serif" font-size="25" font-weight="500" letter-spacing="4" text-anchor="middle" fill="#2A2421">LINDA HAIR</text>
-                <text x="160" y="178" font-family="'Cormorant Garamond', serif" font-size="12" font-weight="600" letter-spacing="5.5" text-anchor="middle" fill="#A98467">&amp; MAKEUP SALON</text>
+                <text x="160" y="152" font-family="'Cormorant Garamond', serif" font-size="25" font-weight="500" letter-spacing="4" text-anchor="middle" fill="#2A2421" class="lang-es">LINDA HARIS</text>
+                <text x="160" y="152" font-family="'Cormorant Garamond', serif" font-size="25" font-weight="500" letter-spacing="4" text-anchor="middle" fill="#2A2421" class="lang-en hide">LINDA HARIS</text>
+                
+                <text x="160" y="178" font-family="'Cormorant Garamond', serif" font-size="12" font-weight="600" letter-spacing="5.5" text-anchor="middle" fill="#A98467" class="lang-es">&amp; SALÓN DE MAQUILLAJE</text>
+                <text x="160" y="178" font-family="'Cormorant Garamond', serif" font-size="12" font-weight="600" letter-spacing="5.5" text-anchor="middle" fill="#A98467" class="lang-en hide">&amp; MAKEUP SALON</text>
             </svg>
         </a>
         
         <nav>
             <a href="#services" class="lang-en hide">Services</a>
             <a href="#services" class="lang-es">Servicios</a>
+
+            <a href="#transformations" class="lang-en hide">Transformations</a>
+            <a href="#transformations" class="lang-es">Transformaciones</a>
             
             <a href="#book" class="btn-nav lang-en hide">Book Session</a>
             <a href="#book" class="btn-nav lang-es">Reservar Cita</a>
             
             <div class="lang-dropdown">
-                <select onchange="switchLanguage(this.value)">
+                <select id="langSelect" onchange="switchLanguage(this.value)">
                     <option value="es" selected>ES</option>
                     <option value="en">EN</option>
                 </select>
@@ -603,10 +742,9 @@
         </div>
     </section>
 
-    <!-- Luxury Services Section -->
+    <!-- Luxury Services Section with Updated Market Pricing -->
     <section id="services" class="services">
         <div class="section-header">
-            <!-- Wrapped strictly in separate classes to secure absolute centering on translation -->
             <h2 class="lang-en hide">Service Menu</h2>
             <h2 class="lang-es">Menú de Servicios</h2>
         </div>
@@ -617,11 +755,12 @@
             <div class="service-list-item">
                 <h3 class="category-name lang-es">Corte para Mujer</h3>
                 <h3 class="category-name lang-en hide">Women's Cut</h3>
-                <span class="treatment-count">5 Tratamientos</span>
+                <span class="treatment-count lang-es">5 Tratamientos</span>
+                <span class="treatment-count lang-en hide">5 Treatments</span>
                 <div class="price-from">
                     <span class="price-label lang-es">desde</span>
                     <span class="price-label lang-en hide">from</span>
-                    <span class="price-value">20 €</span>
+                    <span class="price-value">28 €</span>
                 </div>
             </div>
 
@@ -629,11 +768,12 @@
             <div class="service-list-item">
                 <h3 class="category-name lang-es">Tinte / Color</h3>
                 <h3 class="category-name lang-en hide">Tint / Color</h3>
-                <span class="treatment-count">6 Tratamientos</span>
+                <span class="treatment-count lang-es">6 Tratamientos</span>
+                <span class="treatment-count lang-en hide">6 Treatments</span>
                 <div class="price-from">
                     <span class="price-label lang-es">desde</span>
                     <span class="price-label lang-en hide">from</span>
-                    <span class="price-value">45 €</span>
+                    <span class="price-value">50 €</span>
                 </div>
             </div>
 
@@ -641,11 +781,12 @@
             <div class="service-list-item">
                 <h3 class="category-name lang-es">Mechas</h3>
                 <h3 class="category-name lang-en hide">Highlights</h3>
-                <span class="treatment-count">9 Tratamientos</span>
+                <span class="treatment-count lang-es">9 Tratamientos</span>
+                <span class="treatment-count lang-en hide">9 Treatments</span>
                 <div class="price-from">
                     <span class="price-label lang-es">desde</span>
                     <span class="price-label lang-en hide">from</span>
-                    <span class="price-value">80 €</span>
+                    <span class="price-value">90 €</span>
                 </div>
             </div>
 
@@ -653,31 +794,8 @@
             <div class="service-list-item">
                 <h3 class="category-name lang-es">Peinados</h3>
                 <h3 class="category-name lang-en hide">Hairstyles</h3>
-                <span class="treatment-count">11 Tratamientos</span>
-                <div class="price-from">
-                    <span class="price-label lang-es">desde</span>
-                    <span class="price-label lang-en hide">from</span>
-                    <span class="price-value">25 €</span>
-                </div>
-            </div>
-
-            <!-- Alisados -->
-            <div class="service-list-item">
-                <h3 class="category-name lang-es">Alisados</h3>
-                <h3 class="category-name lang-en hide">Straightening</h3>
-                <span class="treatment-count">9 Tratamientos</span>
-                <div class="price-from">
-                    <span class="price-label lang-es">desde</span>
-                    <span class="price-label lang-en hide">from</span>
-                    <span class="price-value">80 €</span>
-                </div>
-            </div>
-
-            <!-- Salud Capilar -->
-            <div class="service-list-item">
-                <h3 class="category-name lang-es">Salud Capilar</h3>
-                <h3 class="category-name lang-en hide">Capillary Health</h3>
-                <span class="treatment-count">4 Tratamientos</span>
+                <span class="treatment-count lang-es">11 Tratamientos</span>
+                <span class="treatment-count lang-en hide">11 Treatments</span>
                 <div class="price-from">
                     <span class="price-label lang-es">desde</span>
                     <span class="price-label lang-en hide">from</span>
@@ -685,15 +803,42 @@
                 </div>
             </div>
 
+            <!-- Alisados -->
+            <div class="service-list-item">
+                <h3 class="category-name lang-es">Alisados</h3>
+                <h3 class="category-name lang-en hide">Straightening</h3>
+                <span class="treatment-count lang-es">9 Tratamientos</span>
+                <span class="treatment-count lang-en hide">9 Treatments</span>
+                <div class="price-from">
+                    <span class="price-label lang-es">desde</span>
+                    <span class="price-label lang-en hide">from</span>
+                    <span class="price-value">120 €</span>
+                </div>
+            </div>
+
+            <!-- Salud Capilar -->
+            <div class="service-list-item">
+                <h3 class="category-name lang-es">Salud Capilar</h3>
+                <h3 class="category-name lang-en hide">Capillary Health</h3>
+                <span class="treatment-count lang-es">4 Tratamientos</span>
+                <span class="treatment-count lang-en hide">4 Treatments</span>
+                <div class="price-from">
+                    <span class="price-label lang-es">desde</span>
+                    <span class="price-label lang-en hide">from</span>
+                    <span class="price-value">45 €</span>
+                </div>
+            </div>
+
             <!-- Manicura -->
             <div class="service-list-item">
                 <h3 class="category-name lang-es">Manicura</h3>
                 <h3 class="category-name lang-en hide">Manicure</h3>
-                <span class="treatment-count">16 Tratamientos</span>
+                <span class="treatment-count lang-es">16 Tratamientos</span>
+                <span class="treatment-count lang-en hide">16 Treatments</span>
                 <div class="price-from">
                     <span class="price-label lang-es">desde</span>
                     <span class="price-label lang-en hide">from</span>
-                    <span class="price-value">1 €</span>
+                    <span class="price-value">18 €</span>
                 </div>
             </div>
 
@@ -701,11 +846,12 @@
             <div class="service-list-item">
                 <h3 class="category-name lang-es">Pedicuras Y Tratamientos</h3>
                 <h3 class="category-name lang-en hide">Pedicures & Treatments</h3>
-                <span class="treatment-count">8 Tratamientos</span>
+                <span class="treatment-count lang-es">8 Tratamientos</span>
+                <span class="treatment-count lang-en hide">8 Treatments</span>
                 <div class="price-from">
                     <span class="price-label lang-es">desde</span>
                     <span class="price-label lang-en hide">from</span>
-                    <span class="price-value">10 €</span>
+                    <span class="price-value">30 €</span>
                 </div>
             </div>
 
@@ -713,7 +859,8 @@
             <div class="service-list-item">
                 <h3 class="category-name lang-es">Depilación De Cejas</h3>
                 <h3 class="category-name lang-en hide">Eyebrow Waxing</h3>
-                <span class="treatment-count">2 Tratamientos</span>
+                <span class="treatment-count lang-es">2 Tratamientos</span>
+                <span class="treatment-count lang-en hide">2 Treatments</span>
                 <div class="price-from">
                     <span class="price-label lang-es">desde</span>
                     <span class="price-label lang-en hide">from</span>
@@ -725,11 +872,12 @@
             <div class="service-list-item">
                 <h3 class="category-name lang-es">Cejas Y Pestañas</h3>
                 <h3 class="category-name lang-en hide">Brows & Lashes</h3>
-                <span class="treatment-count">5 Tratamientos</span>
+                <span class="treatment-count lang-es">5 Tratamientos</span>
+                <span class="treatment-count lang-en hide">5 Treatments</span>
                 <div class="price-from">
                     <span class="price-label lang-es">desde</span>
                     <span class="price-label lang-en hide">from</span>
-                    <span class="price-value">15 €</span>
+                    <span class="price-value">20 €</span>
                 </div>
             </div>
 
@@ -737,11 +885,12 @@
             <div class="service-list-item">
                 <h3 class="category-name lang-es">Extensiones Y Lifting</h3>
                 <h3 class="category-name lang-en hide">Extensions & Lifting</h3>
-                <span class="treatment-count">7 Tratamientos</span>
+                <span class="treatment-count lang-es">7 Tratamientos</span>
+                <span class="treatment-count lang-en hide">7 Treatments</span>
                 <div class="price-from">
                     <span class="price-label lang-es">desde</span>
                     <span class="price-label lang-en hide">from</span>
-                    <span class="price-value">15 €</span>
+                    <span class="price-value">45 €</span>
                 </div>
             </div>
 
@@ -749,14 +898,71 @@
             <div class="service-list-item">
                 <h3 class="category-name lang-es">Tratamientos Faciales</h3>
                 <h3 class="category-name lang-en hide">Facial Treatments</h3>
-                <span class="treatment-count">1 Tratamiento</span>
+                <span class="treatment-count lang-es">1 Tratamiento</span>
+                <span class="treatment-count lang-en hide">1 Treatment</span>
                 <div class="price-from">
                     <span class="price-label lang-es">desde</span>
                     <span class="price-label lang-en hide">from</span>
-                    <span class="price-value">65 €</span>
+                    <span class="price-value">60 €</span>
                 </div>
             </div>
 
+        </div>
+    </section>
+
+    <!-- Client Transformations Section -->
+    <section id="transformations" class="transformations-section">
+        <div class="section-header">
+            <h2 class="lang-en hide">Client Transformations</h2>
+            <h2 class="lang-es">Transformaciones de Clientes</h2>
+        </div>
+        
+        <div class="transformations-grid">
+            <div class="transformation-card">
+                <div class="comparison-images">
+                    <div class="comparison-pane">
+                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=500&q=80" alt="Before Hair Styling">
+                        <span class="comparison-badge lang-es">Antes</span>
+                        <span class="comparison-badge lang-en hide">Before</span>
+                    </div>
+                    <div class="comparison-pane">
+                        <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=500&q=80" alt="After Hair Styling">
+                        <span class="comparison-badge lang-es">Después</span>
+                        <span class="comparison-badge lang-en hide">After</span>
+                    </div>
+                </div>
+                <div class="transformation-details">
+                    <h3 class="lang-es">Balayage & Nutrición Profunda</h3>
+                    <h3 class="lang-en hide">Balayage & Deep Nutrition</h3>
+                    <p class="lang-es">Transformación completa de color con un acabado brillante, sedoso y natural.</p>
+                    <p class="lang-en hide">Complete color transformation with a shiny, silky, and natural finish.</p>
+                    <a href="#contact" class="btn-redirect lang-es">Contactar para Consulta</a>
+                    <a href="#contact" class="btn-redirect lang-en hide">Contact for Consultation</a>
+                </div>
+            </div>
+
+            <div class="transformation-card">
+                <div class="comparison-images">
+                    <div class="comparison-pane">
+                        <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=500&q=80" alt="Before Hair Transformation">
+                        <span class="comparison-badge lang-es">Antes</span>
+                        <span class="comparison-badge lang-en hide">Before</span>
+                    </div>
+                    <div class="comparison-pane">
+                        <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=500&q=80" alt="After Hair Transformation">
+                        <span class="comparison-badge lang-es">Después</span>
+                        <span class="comparison-badge lang-en hide">After</span>
+                    </div>
+                </div>
+                <div class="transformation-details">
+                    <h3 class="lang-es">Alisado de Seda & Estilo</h3>
+                    <h3 class="lang-en hide">Silk Straightening & Styling</h3>
+                    <p class="lang-es">Corrección de frizz y restauración completa de la hebra capilar.</p>
+                    <p class="lang-en hide">Frizz control and complete hair strand restoration treatment.</p>
+                    <a href="#contact" class="btn-redirect lang-es">Contactar para Consulta</a>
+                    <a href="#contact" class="btn-redirect lang-en hide">Contact for Consultation</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -770,35 +976,39 @@
             
             <form onsubmit="sendToWhatsApp(event)" class="salon-form">
                 <div class="form-group">
-                    <label class="lang-en hide">Full Name</label><label class="lang-es">Nombre Completo</label>
+                    <label class="lang-en hide">Full Name</label>
+                    <label class="lang-es">Nombre Completo</label>
                     <input type="text" id="clientName" required placeholder="e.g. Vanessa Laurent">
                 </div>
                 
                 <div class="form-group">
-                    <label class="lang-en hide">Service Selection</label><label class="lang-es">Selección de Servicio</label>
+                    <label class="lang-en hide">Service Selection</label>
+                    <label class="lang-es">Selección de Servicio</label>
                     <select id="clientService" required>
-                        <option value="Corte para Mujer">Corte para Mujer (desde 20€)</option>
-                        <option value="Tinte / Color">Tinte / Color (desde 45€)</option>
-                        <option value="Mechas">Mechas (desde 80€)</option>
-                        <option value="Peinados">Peinados (desde 25€)</option>
-                        <option value="Alisados">Alisados (desde 80€)</option>
-                        <option value="Salud Capilar">Salud Capilar (desde 35€)</option>
-                        <option value="Manicura">Manicura (desde 1€)</option>
-                        <option value="Pedicuras Y Tratamientos">Pedicuras Y Tratamientos (desde 10€)</option>
+                        <option value="Corte para Mujer">Corte para Mujer (desde 28€)</option>
+                        <option value="Tinte / Color">Tinte / Color (desde 50€)</option>
+                        <option value="Mechas">Mechas (desde 90€)</option>
+                        <option value="Peinados">Peinados (desde 35€)</option>
+                        <option value="Alisados">Alisados (desde 120€)</option>
+                        <option value="Salud Capilar">Salud Capilar (desde 45€)</option>
+                        <option value="Manicura">Manicura (desde 18€)</option>
+                        <option value="Pedicuras Y Tratamientos">Pedicuras Y Tratamientos (desde 30€)</option>
                         <option value="Depilación De Cejas">Depilación De Cejas (desde 10€)</option>
-                        <option value="Cejas Y Pestañas">Cejas Y Pestañas (desde 15€)</option>
-                        <option value="Extensiones Y Lifting">Extensiones Y Lifting (desde 15€)</option>
-                        <option value="Tratamientos Faciales">Tratamientos Faciales (65€)</option>
+                        <option value="Cejas Y Pestañas">Cejas Y Pestañas (desde 20€)</option>
+                        <option value="Extensiones Y Lifting">Extensiones Y Lifting (desde 45€)</option>
+                        <option value="Tratamientos Faciales">Tratamientos Faciales (desde 60€)</option>
                     </select>
                 </div>
                 
                 <div class="form-row">
                     <div class="form-group">
-                        <label class="lang-en hide">Preferred Date</label><label class="lang-es">Fecha Preferida</label>
+                        <label class="lang-en hide">Preferred Date</label>
+                        <label class="lang-es">Fecha Preferida</label>
                         <input type="date" id="clientDate" required>
                     </div>
                     <div class="form-group">
-                        <label class="lang-en hide">Preferred Time</label><label class="lang-es">Hora Preferida</label>
+                        <label class="lang-en hide">Preferred Time</label>
+                        <label class="lang-es">Hora Preferida</label>
                         <input type="time" id="clientTime" required>
                     </div>
                 </div>
@@ -809,36 +1019,48 @@
         </div>
     </section>
 
-    <!-- Secure Contact Section with Refined, Visible Vector Icons -->
+    <!-- Secure Contact Section with Theme-Matching Outline Icons & Social Buttons -->
     <section id="contact" class="contact-section">
         <div class="contact-container">
             <div class="contact-text-side">
                 <h2 class="lang-en hide">Get in Touch</h2>
                 <h2 class="lang-es">Ponte en Contacto</h2>
-                <p class="lang-en hide">Have a question about our services or need assistance? Connect with us directly on your preferred channel.</p>
-                <p class="lang-es">¿Tiene alguna duda sobre nuestros servicios o necesita ayuda? Escríbanos directamente a través de su canal preferido.</p>
+                <p class="lang-en hide">Have a question about our services or need assistance? Connect with us directly on your preferred channel or social media.</p>
+                <p class="lang-es">¿Tiene alguna duda sobre nuestros servicios o necesita ayuda? Escríbanos directamente a través de su canal preferido o en nuestras redes sociales.</p>
+                
+                <!-- Instagram & Facebook Buttons -->
+                <div class="social-buttons-row">
+                    <a href="https://instagram.com" target="_blank" class="social-pill-btn">
+                        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        Instagram
+                    </a>
+                    <a href="https://facebook.com" target="_blank" class="social-pill-btn">
+                        <svg viewBox="0 0 24 24"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.37 14.5 5 15.5 5H18V0h-3.808C10.5 0 9 1.5 9 4.714V8z"/></svg>
+                        Facebook
+                    </a>
+                </div>
             </div>
             
             <div class="contact-cards">
-                <!-- WhatsApp Card -->
-                <a href="#" id="secureWhatsAppLink" target="_blank" class="contact-card whatsapp-card">
+                <!-- Phone / WhatsApp Card with Phone Outline Icon -->
+                <a href="#" id="secureWhatsAppLink" target="_blank" class="contact-card">
                     <div class="contact-icon-wrapper">
-                        <!-- Redesigned High-Definition Vector Logo to guarantee complete visibility on all rendering engines -->
-                        <svg viewBox="0 0 448 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L3 512l148.5-39c32.8 17.9 69.6 27.3 107.4 27.3 122.4 0 222-99.6 222-222 0-59.3-23.2-115-65.1-157.1zM223.9 474c-33.2 0-65.7-8.9-94-25.7l-6.7-4-88.1 23.1 23.5-85.8-4.4-7C35.7 340.2 26 306.3 26 271.4c0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" fill="#25D366"/>
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                         </svg>
                     </div>
                     <div class="contact-info-text">
-                        <span class="contact-label">WhatsApp</span>
+                        <span class="contact-label">WhatsApp / Phone</span>
                         <span class="contact-value" id="secureWhatsAppLabel">Cargando...</span>
                     </div>
                 </a>
 
-                <!-- Email Card -->
-                <a href="#" id="secureEmailLink" class="contact-card email-card">
+                <!-- Email Card with Mail Outline Icon -->
+                <a href="#" id="secureEmailLink" class="contact-card">
                     <div class="contact-icon-wrapper">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="#EA4335"/>
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
                         </svg>
                     </div>
                     <div class="contact-info-text">
@@ -852,7 +1074,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Linda Hair & Makeup Salon. All rights reserved.</p>
+        <p>&copy; 2026 Linda Haris & Makeup Salon. All rights reserved.</p>
     </footer>
 
     <script>
@@ -892,6 +1114,7 @@
 
         function switchLanguage(lang) {
             currentLang = lang;
+            document.getElementById('langSelect').value = lang;
             const enElements = document.querySelectorAll('.lang-en');
             const esElements = document.querySelectorAll('.lang-es');
             
@@ -915,9 +1138,9 @@
 
             let message = "";
             if (currentLang === 'es') {
-                message = `¡Hola Linda Hair & Makeup Salon! Deseo agendar una cita:%0A%0A• *Cliente:* ${name}%0A• *Servicio:* ${service}%0A• *Fecha:* ${date}%0A• *Hora:* ${time}`;
+                message = `¡Hola Linda Haris & Makeup Salon! Deseo agendar una cita:%0A%0A• *Cliente:* ${name}%0A• *Servicio:* ${service}%0A• *Fecha:* ${date}%0A• *Hora:* ${time}`;
             } else {
-                message = `Hello Linda Hair & Makeup Salon! I'd like to request an appointment:%0A%0A• *Client:* ${name}%0A• *Service:* ${service}%0A• *Date:* ${date}%0A• *Time:* ${time}`;
+                message = `Hello Linda Haris & Makeup Salon! I'd like to request an appointment:%0A%0A• *Client:* ${name}%0A• *Service:* ${service}%0A• *Date:* ${date}%0A• *Time:* ${time}`;
             }
             window.open(`https://wa.me/${salonPhoneNumber}?text=${message}`, '_blank');
         }
